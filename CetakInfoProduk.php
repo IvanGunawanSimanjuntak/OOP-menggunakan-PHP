@@ -1,0 +1,19 @@
+<?php 
+class CetakInfoProduk {
+    public $daftarProduk = array();
+
+    public function tambahProduk(Produk $produk){
+        $this->daftarProduk[] = $produk;
+    }
+
+    public function cetak(){
+        $str = "DAFTAR PRODUK : <br> <hr>";
+        foreach ($this->daftarProduk as $produk){
+            $str .= "-{$produk->getInfoProduk()} <br>";
+        }
+        return $str;
+    }
+}
+
+
+?>
